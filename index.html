@@ -500,7 +500,7 @@ function buildSidebar(data) {
     }
   }
 
-  const sorted = [...counts.keys()].sort((a, b) => a.localeCompare(b, 'da'));
+  const sorted = [...counts.keys()].sort((a, b) => counts.get(b) - counts.get(a));
   const list = document.getElementById('activities-list');
   list.innerHTML = '';
 
