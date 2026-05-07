@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mødrehjælpens Lokalforeninger</title>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Reset & Base ───────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple:       #E8174B;
+      --purple-dark:  #b8103a;
+      --purple-light: #fde8ee;
+      --purple-mid:   #f4a0b8;
+      --cream:        #faf8f5;
+      --white:        #ffffff;
+      --text:         #1a1a1a;
+      --text-muted:   #666666;
+      --border:       #e8e0ea;
+      --shadow:       0 2px 12px rgba(139,58,143,0.10);
+      --shadow-lg:    0 8px 32px rgba(139,58,143,0.16);
+      --radius:       10px;
+      --sidebar-w:    300px;
+      --header-h:     56px;
+    }
+
+    html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); }
+
+    /* ── Layout ─────────────────────────────────────────────────────────── */
+    #app { display: flex; flex-direction: column; height: 100%; }
+
+    /* Header */
+    #header {
+      height: var(--header-h);
+      background: var(--purple);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      gap: 12px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      z-index: 1000;
+    }
+    #header .logo {
+      width: 32px; height: 32px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    #header .logo svg { width: 20px; height: 20px; }
+    #header h1 { font-size: 1.05rem; font-weight: 600; letter-spacing: -0.01em; }
+    #header .subtitle { font-size: 0.78rem; opacity: 0.8; margin-left: auto; white-space: nowrap; }
+
+    /* Main area below header */
+    #main { display: flex; flex: 1; overflow: hidden; }
+
+    /* Sidebar */
+    #sidebar {
+      width: var(--sidebar-w);
+      flex-shrink: 0;
+      background: var(--white);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 100;
+    }
+    #sidebar-header {
+      padding: 14px 16px 12px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    #sidebar-logo {
+      display: block;
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      margin-bottom: 12px;
+    }
+    #sidebar-header h2 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    #filter-count {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    #filter-count strong { color: var(--purple); }
+
+    #activities-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 10px 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    #activities-list::-webkit-scrollbar { width: 4px; }
+    #activities-list::-webkit-scrollbar-thumb { background: var(--purple-mid); border-radius: 4px; }
+
+    .activity-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 7px;
+      border: 1.5px solid transparent;
+      background: transparent;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+      font-size: 0.82rem;
+      color: var(--text);
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+      line-height: 1.3;
+    }
+    .activity-chip:hover {
+      background: var(--purple-light);
+      border-color: var(--purple-mid);
+    }
+    .activity-chip.active {
+      background: var(--purple);
+      border-color: var(--purple);
+      color: var(--white);
+      font-weight: 500;
+    }
+    .activity-chip .chip-count {
+      margin-left: auto;
+      font-size: 0.72rem;
+      background: rgba(0,0,0,0.07);
+      border-radius: 20px;
+      padding: 1px 6px;
+      flex-shrink: 0;
+      font-weight: 600;
+    }
+    .activity-chip.active .chip-count {
+      background: rgba(255,255,255,0.25);
+    }
+
+    /* ── Map ────────────────────────────────────────────────────────────── */
+    #map-container { flex: 1; position: relative; overflow: hidden; }
+    #map { width: 100%; height: 100%; }
+
+    /* ── Detail panel ───────────────────────────────────────────────────── */
+    #detail-panel {
+      position: absolute;
+      top: 12px; right: 12px;
+      width: 280px;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transform: translateX(320px);
+      transition: transform 0.3s cubic-bezier(0.34, 1.2, 0.64, 1);
+      z-index: 500;
+      max-height: calc(100% - 24px);
+      display: flex;
+      flex-direction: column;
+    }
+    #detail-panel.open { transform: translateX(0); }
+
+    #detail-header {
+      background: var(--purple);
+      color: var(--white);
+      padding: 14px 14px 14px 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    #detail-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      flex: 1;
+      line-height: 1.3;
+    }
+    #detail-close {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: var(--white);
+      cursor: pointer;
+      border-radius: 50%;
+      width: 24px; height: 24px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s;
+      font-size: 1rem;
+      line-height: 1;
+    }
+    #detail-close:hover { background: rgba(255,255,255,0.35); }
+
+    #detail-body {
+      padding: 14px 16px;
+      overflow-y: auto;
+      flex: 1;
+    }
+    #detail-body::-webkit-scrollbar { width: 4px; }
+    #detail-body::-webkit-scrollbar-thumb { background: var(--purple-mid); border-radius: 4px; }
+
+    .detail-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+      align-items: flex-start;
+      font-size: 0.82rem;
+      color: var(--text);
+    }
+    .detail-row .icon {
+      color: var(--purple);
+      flex-shrink: 0;
+      margin-top: 1px;
+      width: 16px;
+      text-align: center;
+    }
+    .detail-row a { color: var(--purple); text-decoration: none; }
+    .detail-row a:hover { text-decoration: underline; }
+
+    .detail-section-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin: 12px 0 6px;
+    }
+    .detail-activities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .detail-activity-tag {
+      font-size: 0.76rem;
+      background: var(--purple-light);
+      color: var(--purple-dark);
+      border: 1px solid var(--purple-mid);
+      border-radius: 20px;
+      padding: 3px 9px;
+      font-weight: 500;
+    }
+    .detail-activity-tag.highlight {
+      background: var(--purple);
+      color: var(--white);
+      border-color: var(--purple);
+    }
+
+    /* ── Leaflet custom markers ─────────────────────────────────────────── */
+    .mhj-marker {
+      width: 28px; height: 28px;
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-45deg);
+      border: 2.5px solid var(--white);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      transition: transform 0.15s, box-shadow 0.15s;
+      cursor: pointer;
+    }
+    .mhj-marker.purple { background: var(--purple); }
+    .mhj-marker.grey   { background: #b0b0b0; }
+    .mhj-marker.active { background: #e63946; box-shadow: 0 3px 14px rgba(230,57,70,0.45); }
+    .mhj-marker-wrap { width: 28px; height: 28px; }
+    .mhj-marker-wrap:hover .mhj-marker { transform: rotate(-45deg) scale(1.2); box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
+
+    /* ── Leaflet popup override ─────────────────────────────────────────── */
+    .leaflet-popup-content-wrapper {
+      border-radius: var(--radius) !important;
+      box-shadow: var(--shadow-lg) !important;
+      padding: 0 !important;
+      overflow: hidden;
+    }
+    .leaflet-popup-content { margin: 0 !important; width: auto !important; }
+    .leaflet-popup-tip-container { display: none; }
+
+    /* ── Mobile ─────────────────────────────────────────────────────────── */
+    #sidebar-toggle {
+      display: none;
+      position: absolute;
+      bottom: 24px; left: 12px;
+      z-index: 600;
+      background: var(--purple);
+      color: var(--white);
+      border: none;
+      border-radius: 24px;
+      padding: 10px 16px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: var(--shadow-lg);
+      gap: 6px;
+      align-items: center;
+    }
+
+    @media (max-width: 700px) {
+      #sidebar {
+        position: absolute;
+        top: 0; left: 0;
+        height: 100%;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 600;
+        border-right: none;
+        box-shadow: var(--shadow-lg);
+      }
+      #sidebar.open { transform: translateX(0); }
+      #sidebar-toggle { display: flex; }
+      #detail-panel { top: auto; bottom: 12px; right: 8px; left: 8px; width: auto; max-height: 55vh; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="app">
+
+  <!-- Header -->
+  <header id="header">
+    <div class="logo">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#E8174B"/>
+      </svg>
+    </div>
+    <h1>Mødrehjælpens Lokalforeninger</h1>
+    <span class="subtitle" id="header-count"></span>
+  </header>
+
+  <div id="main">
+
+    <!-- Sidebar: activity filter -->
+    <aside id="sidebar">
+      <div id="sidebar-header">
+        <img id="sidebar-logo" src="https://moedrehjaelpen.dk/wp-content/uploads/2026/03/MHJ_Logo_kvadratisk.png" alt="Mødrehjælpen" />
+        <h2>Filtrer på aktivitet</h2>
+        <div id="filter-count">Viser <strong id="visible-count">0</strong> af <strong id="total-count">0</strong> lokalforeninger</div>
+      </div>
+      <div id="activities-list"></div>
+    </aside>
+
+    <!-- Map area -->
+    <div id="map-container">
+      <div id="map"></div>
+
+      <!-- Detail panel -->
+      <aside id="detail-panel">
+        <div id="detail-header">
+          <div id="detail-title"></div>
+          <button id="detail-close" title="Luk">✕</button>
+        </div>
+        <div id="detail-body"></div>
+      </aside>
+
+      <!-- Mobile sidebar toggle -->
+      <button id="sidebar-toggle">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        Aktiviteter
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ── Data loading ─────────────────────────────────────────────────────────────
+
+let allData = [];
+let selectedActivity = null;
+let selectedMarkerEntry = null;
+const markers = new Map(); // name → { entry, marker }
+
+// ── Map setup ────────────────────────────────────────────────────────────────
+
+const map = L.map('map', {
+  center: [56.0, 10.5],
+  zoom: 7,
+  zoomControl: true,
+});
+
+// CartoDB Positron — clean, minimal tile style
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; <a href="https://carto.com/attributions">CARTO</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  subdomains: 'abcd',
+  maxZoom: 19,
+}).addTo(map);
+
+// ── Marker helpers ────────────────────────────────────────────────────────────
+
+function makeIcon(state) {
+  // state: 'purple' | 'grey' | 'active'
+  return L.divIcon({
+    className: 'mhj-marker-wrap',
+    html: `<div class="mhj-marker ${state}"></div>`,
+    iconSize: [28, 28],
+    iconAnchor: [14, 28],
+    popupAnchor: [0, -30],
+  });
+}
+
+function updateMarkerStates() {
+  markers.forEach(({ entry, marker }) => {
+    const isSelected = entry === selectedMarkerEntry;
+    let state;
+    if (selectedActivity) {
+      state = entry.activities.includes(selectedActivity) ? 'purple' : 'grey';
+    } else {
+      state = 'purple';
+    }
+    if (isSelected) state = 'active';
+    marker.setIcon(makeIcon(state));
+    // Raise selected marker to top
+    if (isSelected && marker.getElement()) {
+      marker.getElement().style.zIndex = 1000;
+    }
+  });
+}
+
+// ── Detail panel ──────────────────────────────────────────────────────────────
+
+function openDetail(entry) {
+  selectedMarkerEntry = entry;
+  updateMarkerStates();
+
+  const panel = document.getElementById('detail-panel');
+  document.getElementById('detail-title').textContent = entry.name;
+
+  const body = document.getElementById('detail-body');
+  let html = '';
+
+  if (entry.address) {
+    html += `<div class="detail-row">
+      <span class="icon">📍</span>
+      <span>${entry.address}</span>
+    </div>`;
+  }
+  if (entry.phone) {
+    html += `<div class="detail-row">
+      <span class="icon">📞</span>
+      <a href="tel:${entry.phone}">${formatPhone(entry.phone)}</a>
+    </div>`;
+  }
+  if (entry.email) {
+    html += `<div class="detail-row">
+      <span class="icon">✉</span>
+      <a href="mailto:${entry.email}">${entry.email}</a>
+    </div>`;
+  }
+  if (entry.url) {
+    html += `<div class="detail-row">
+      <span class="icon">🔗</span>
+      <a href="${entry.url}" target="_blank" rel="noopener">Se side</a>
+    </div>`;
+  }
+
+  if (entry.activities.length > 0) {
+    html += `<div class="detail-section-title">Aktiviteter</div>`;
+    html += `<div class="detail-activities">`;
+    for (const act of entry.activities) {
+      const hl = act === selectedActivity ? ' highlight' : '';
+      html += `<span class="detail-activity-tag${hl}">${escHtml(act)}</span>`;
+    }
+    html += `</div>`;
+  }
+
+  body.innerHTML = html;
+  panel.classList.add('open');
+}
+
+function closeDetail() {
+  selectedMarkerEntry = null;
+  document.getElementById('detail-panel').classList.remove('open');
+  updateMarkerStates();
+}
+
+document.getElementById('detail-close').addEventListener('click', closeDetail);
+
+// ── Sidebar: activity chips ───────────────────────────────────────────────────
+
+function buildSidebar(data) {
+  // Count how many lokalforeninger offer each activity
+  const counts = new Map();
+  for (const entry of data) {
+    for (const act of entry.activities) {
+      counts.set(act, (counts.get(act) || 0) + 1);
+    }
+  }
+
+  const sorted = [...counts.keys()].sort((a, b) => a.localeCompare(b, 'da'));
+  const list = document.getElementById('activities-list');
+  list.innerHTML = '';
+
+  for (const act of sorted) {
+    const btn = document.createElement('button');
+    btn.className = 'activity-chip';
+    btn.dataset.activity = act;
+    btn.innerHTML = `<span class="chip-label">${escHtml(act)}</span><span class="chip-count">${counts.get(act)}</span>`;
+    btn.addEventListener('click', () => toggleFilter(act, btn));
+    list.appendChild(btn);
+  }
+
+  updateCountDisplay(data.length, data.length);
+  document.getElementById('header-count').textContent = `${data.length} lokalforeninger`;
+  document.getElementById('total-count').textContent = data.length;
+}
+
+function toggleFilter(activity, btn) {
+  if (selectedActivity === activity) {
+    // Deselect
+    selectedActivity = null;
+    document.querySelectorAll('.activity-chip').forEach(c => c.classList.remove('active'));
+    updateCountDisplay(allData.length, allData.length);
+  } else {
+    selectedActivity = activity;
+    document.querySelectorAll('.activity-chip').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    const matching = allData.filter(e => e.activities.includes(activity));
+    updateCountDisplay(matching.length, allData.length);
+  }
+
+  updateMarkerStates();
+
+  // If detail panel is open, refresh activity highlights
+  if (selectedMarkerEntry) {
+    openDetail(selectedMarkerEntry);
+  }
+}
+
+function updateCountDisplay(visible, total) {
+  document.getElementById('visible-count').textContent = visible;
+  document.getElementById('total-count').textContent = total;
+}
+
+// ── Placing markers ───────────────────────────────────────────────────────────
+
+function placeMarkers(data) {
+  for (const entry of data) {
+    if (entry.lat == null || entry.lng == null) continue;
+
+    const marker = L.marker([entry.lat, entry.lng], {
+      icon: makeIcon('purple'),
+      title: entry.name,
+    }).addTo(map);
+
+    marker.on('click', () => openDetail(entry));
+
+    markers.set(entry.name, { entry, marker });
+  }
+}
+
+// ── Utilities ─────────────────────────────────────────────────────────────────
+
+function escHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function formatPhone(raw) {
+  // Format 8-digit Danish phone as "XX XX XX XX"
+  const digits = raw.replace(/\D/g, '');
+  if (digits.length === 8) {
+    return `${digits.slice(0,2)} ${digits.slice(2,4)} ${digits.slice(4,6)} ${digits.slice(6,8)}`;
+  }
+  return raw;
+}
+
+// ── Mobile sidebar toggle ─────────────────────────────────────────────────────
+
+document.getElementById('sidebar-toggle').addEventListener('click', () => {
+  document.getElementById('sidebar').classList.toggle('open');
+});
+
+// Close sidebar when clicking on map (mobile)
+map.on('click', () => {
+  document.getElementById('sidebar').classList.remove('open');
+});
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+
+fetch('data.json')
+  .then(r => {
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    return r.json();
+  })
+  .then(data => {
+    allData = data;
+    buildSidebar(data);
+    placeMarkers(data);
+  })
+  .catch(err => {
+    document.getElementById('map').insertAdjacentHTML('beforeend',
+      `<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+        background:#fff;padding:24px 32px;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,.15);
+        text-align:center;z-index:9999;">
+        <strong style="color:#E8174B">Kunne ikke indlæse data</strong><br>
+        <small style="color:#666">Kør siden via en lokal webserver.<br>
+        <code>python -m http.server 8000</code></small>
+      </div>`
+    );
+    console.error('Failed to load data.json:', err);
+  });
+</script>
+</body>
+</html>

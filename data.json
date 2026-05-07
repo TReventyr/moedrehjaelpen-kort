@@ -1,0 +1,738 @@
+[
+  {
+    "name": "Mødrehjælpen Odense lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/odense/",
+    "address": "",
+    "city": "Odense",
+    "phone": "",
+    "email": "odense@mhj-lokal.dk",
+    "lat": 55.3997225,
+    "lng": 10.3852104,
+    "activities": [
+      "Den rullende kagemand",
+      "Oplevelser og udflugter",
+      "Babycafé",
+      "Baby På Vej - Gruppeforløb for gravide",
+      "Babystartpakker",
+      "Måltidet"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Amager lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/amager/",
+    "address": "",
+    "city": "Amager",
+    "phone": "",
+    "email": "Amager@mhj-lokal.dk",
+    "lat": 55.6342308,
+    "lng": 12.5978926,
+    "activities": [
+      "Den rullende kagemand",
+      "Oplevelser og udflugter",
+      "Konfirmationshjælp",
+      "Støtte til fritidsaktiviteter"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Køge lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/koege/",
+    "address": "",
+    "city": "Koege",
+    "phone": "25334372",
+    "email": "Koge@mhj-lokal.dk",
+    "lat": 55.4565009,
+    "lng": 12.1818964,
+    "activities": [
+      "Den rullende kagemand",
+      "Oplevelser og udflugter",
+      "Gavekort til nybagte mødre",
+      "Gravidcafé"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Høje Taastrup lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/hoeje-taastrup/",
+    "address": "",
+    "city": "Høje Taastrup",
+    "phone": "",
+    "email": "hoje-taastrup@mhj-lokal.dk",
+    "lat": 55.6566,
+    "lng": 12.2417,
+    "activities": [
+      "Den rullende kagemand",
+      "Oplevelser og udflugter",
+      "Ønsketræet"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Horsens lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/horsens/",
+    "address": "Kattesund 9, 8700 Horsens",
+    "city": "Horsens",
+    "phone": "",
+    "email": "Horsens@mhj-lokal.dk",
+    "lat": 55.862574,
+    "lng": 9.85352,
+    "activities": [
+      "Den rullende kagemand",
+      "Oplevelser og udflugter",
+      "Babystartpakker",
+      "Babycafé",
+      "Julehjælp"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Kolding lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/kolding/",
+    "address": "Blæsbjerggade 4, 6000 Kolding",
+    "city": "Kolding",
+    "phone": "",
+    "email": "Kolding@mhj-lokal.dk",
+    "lat": 55.491588,
+    "lng": 9.471178,
+    "activities": [
+      "Den rullende kagemand",
+      "Oplevelser og udflugter"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Hvidovre-Rødovre lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/hvidovre-roedovre/",
+    "address": "",
+    "city": "Hvidovre Roedovre",
+    "phone": "",
+    "email": "Hvid-rod@mhj-lokal.dk",
+    "lat": 55.6717281,
+    "lng": 12.4409866,
+    "activities": [
+      "Den rullende kagemand",
+      "Babystartpakker",
+      "Oplevelser og udflugter",
+      "Babycafé",
+      "Sommerlejr",
+      "Ønsketræet"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Lyngby lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/lyngby/",
+    "address": "",
+    "city": "Lyngby",
+    "phone": "23425559",
+    "email": "Lyngby@mhj-lokal.dk",
+    "lat": 55.7718649,
+    "lng": 12.5051413,
+    "activities": [
+      "Den rullende kagemand",
+      "Babystartpakker",
+      "Oplevelser og udflugter"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Ringsted-Sorø lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/ringsted/",
+    "address": "",
+    "city": "Ringsted",
+    "phone": "",
+    "email": "Ringsted@mhj-lokal.dk",
+    "lat": 55.446817,
+    "lng": 11.7975218,
+    "activities": [
+      "Den rullende kagemand",
+      "Babystartpakker",
+      "Oplevelser og udflugter",
+      "Bisidder - Familieretshuset Ringsted",
+      "Ønsketræet"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Slagelse lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/slagelse/",
+    "address": "Fisketorvet 4, 4200 Slagelse",
+    "city": "Slagelse",
+    "phone": "",
+    "email": "Slagelse@mhj-lokal.dk",
+    "lat": 55.403336,
+    "lng": 11.356039,
+    "activities": [
+      "Den rullende kagemand",
+      "Babystartpakker",
+      "Oplevelser og udflugter",
+      "Familiecafé",
+      "Julehjælp",
+      "Måltidet"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Helsingør lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/helsingoer/",
+    "address": "",
+    "city": "Helsingoer",
+    "phone": "23236688",
+    "email": "Helsingor@mhj-lokal.dk",
+    "lat": 56.0348739,
+    "lng": 12.6130073,
+    "activities": [
+      "Den rullende kagemand",
+      "Babystartpakker",
+      "Oplevelser og udflugter",
+      "Ønsketræet",
+      "Gravidcafé",
+      "Babycafé",
+      "Far på dækket (Fars legestue)",
+      "Familiecafé"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Nykøbing F. lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/nykoebing-f/",
+    "address": "Mødrehjælpens butik Slotsgade 9, 4800 Nykøbing F",
+    "city": "Nykøbing F",
+    "phone": "",
+    "email": "Nykobing@mhj-lokal.dk",
+    "lat": 54.7646137,
+    "lng": 11.8709918,
+    "activities": [
+      "Den rullende kagemand",
+      "Babystartpakker",
+      "Oplevelser og udflugter",
+      "Ønsketræet"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Haderslev lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/haderslev/",
+    "address": "",
+    "city": "Haderslev",
+    "phone": "",
+    "email": "haderslev@mhj-lokal.dk",
+    "lat": 55.2500715,
+    "lng": 9.4997871,
+    "activities": [
+      "Den rullende kagemand",
+      "Babystartpakker",
+      "Oplevelser og udflugter",
+      "Vandaktivitet",
+      "Familieven",
+      "Julefest",
+      "Legestue"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Sønderborg lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/soenderborg/",
+    "address": "",
+    "city": "Sønderborg",
+    "phone": "",
+    "email": "sonderborg@mhj-lokal.dk",
+    "lat": 54.9089,
+    "lng": 9.7898,
+    "activities": [
+      "Den rullende kagemand",
+      "Oplevelser og udflugter"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Silkeborg lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/silkeborg/",
+    "address": "",
+    "city": "Silkeborg",
+    "phone": "",
+    "email": "Silkeborg@mhj-lokal.dk",
+    "lat": 56.169453,
+    "lng": 9.5495141,
+    "activities": [
+      "Den rullende kagemand",
+      "Babystartpakker",
+      "Babycafé",
+      "Oplevelser og udflugter"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Randers lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/randers/",
+    "address": "",
+    "city": "Randers",
+    "phone": "",
+    "email": "randers@mhj-lokal.dk",
+    "lat": 56.4617545,
+    "lng": 10.0371476,
+    "activities": [
+      "Den rullende kagemand",
+      "Oplevelser og udflugter",
+      "Babystartpakker",
+      "En Hjælpende Hånd",
+      "Gravid- og barselsgruppe",
+      "Lokal julehjælp"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Ballerup lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/ballerup/",
+    "address": "",
+    "city": "Ballerup",
+    "phone": "",
+    "email": "Ballerup@mhj-lokal.dk",
+    "lat": 55.7303589,
+    "lng": 12.3612313,
+    "activities": [
+      "Den rullende kagemand",
+      "Oplevelser og udflugter",
+      "Babystartpakker",
+      "Ønsketræet"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Svendborg lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/svendborg/",
+    "address": "Frilandsvej 43, 5700 Svendborg",
+    "city": "Svendborg",
+    "phone": "",
+    "email": "svendborg@mhj-lokal.dk",
+    "lat": 55.067559,
+    "lng": 10.595388,
+    "activities": [
+      "Den rullende kagemand",
+      "Oplevelser og udflugter",
+      "Babycafé",
+      "Fars legestue",
+      "Måltidet"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Varde lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/varde/",
+    "address": "",
+    "city": "Varde",
+    "phone": "",
+    "email": "varde@mhj-lokal.dk",
+    "lat": 55.6176702,
+    "lng": 8.4811757,
+    "activities": [
+      "Den rullende kagemand",
+      "Babystartpakker",
+      "Oplevelser og udflugter",
+      "Lokal julehjælp"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Roskilde lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/roskilde/",
+    "address": "St. Gråbrødrestræde 21, 4000 Roskilde",
+    "city": "Roskilde",
+    "phone": "42831100",
+    "email": "roskilde@mhj-lokal.dk",
+    "lat": 55.640503,
+    "lng": 12.087721,
+    "activities": [
+      "Oplevelser og udflugter",
+      "Sommerlejr",
+      "Mødrehjælp i hjemmet",
+      "En Hjælpende Hånd",
+      "Legestue",
+      "Førstehjælp - forebyg ulykker",
+      "Kokkeskole for børn og forældre",
+      "Julebagning og juledekorationer"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Skive lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/skive/",
+    "address": "Frederiksgade 21A, 7800 Skive",
+    "city": "Skive",
+    "phone": "23960580",
+    "email": "skive@mhj-lokal.dk",
+    "lat": 56.5674091,
+    "lng": 9.0202041,
+    "activities": [
+      "Den rullende kagemand",
+      "Babystartpakker",
+      "Oplevelser og udflugter",
+      "Måltidet",
+      "Sommerlejr",
+      "Familiecafé og Babycafé"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Holbæk lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/holbaek/",
+    "address": "",
+    "city": "Holbaek",
+    "phone": "",
+    "email": "holbaek@mhj-lokal.dk",
+    "lat": 55.7186117,
+    "lng": 11.7135474,
+    "activities": [
+      "Den rullende kagemand",
+      "Oplevelser og udflugter",
+      "Besøg i Cirkus Kæphøj i Holbæk",
+      "Ønsketræet"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Nørrebro lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/noerrebro/",
+    "address": "",
+    "city": "Nørrebro",
+    "phone": "",
+    "email": "Norrebro@mhj-lokal.dk",
+    "lat": 55.7007,
+    "lng": 12.5378,
+    "activities": [
+      "Den rullende kagemand",
+      "Oplevelser og udflugter",
+      "En Hjælpende Hånd",
+      "Ansøgning om skoletasker",
+      "Julegaver"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Maribo lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/maribo/",
+    "address": "Østergade 3, 4930 Maribo",
+    "city": "Maribo",
+    "phone": "",
+    "email": "Maribo@mhj-lokal.dk",
+    "lat": 54.77471,
+    "lng": 11.502564,
+    "activities": [
+      "Den rullende kagemand",
+      "Babystartpakker",
+      "Oplevelser og udflugter",
+      "Tons og Tumle",
+      "Måltidet",
+      "Julehjælp og -fest"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Hillerød lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/hilleroed/",
+    "address": "",
+    "city": "Hilleroed",
+    "phone": "",
+    "email": "Hillerod@mhj-lokal.dk",
+    "lat": 55.9285735,
+    "lng": 12.3063909,
+    "activities": [
+      "Den rullende kagemand",
+      "Babystartpakker",
+      "Oplevelser og udflugter",
+      "Legestue",
+      "Tøjpakker til mindre børn"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Egedal lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/egedal/",
+    "address": "",
+    "city": "Egedal",
+    "phone": "",
+    "email": "egedal@mhj-lokal.dk",
+    "lat": 55.7797855,
+    "lng": 12.1854997,
+    "activities": [
+      "Den rullende kagemand",
+      "Babystartpakker",
+      "Oplevelser og udflugter",
+      "Ønsketræet"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Middelfart  lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/middelfart/",
+    "address": "Mødrehjælpens butik på Østergade 58, 5500 Middelfart",
+    "city": "Middelfart",
+    "phone": "",
+    "email": "kerteminde@mhj-lokal.dk",
+    "lat": 55.4993014,
+    "lng": 9.7392181,
+    "activities": [
+      "Den rullende kagemand",
+      "Babycafé",
+      "Babystartpakker",
+      "Oplevelser og udflugter"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Kerteminde lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/kerteminde/",
+    "address": "Tværgade 40,5300 Kerteminde",
+    "city": "Kerteminde",
+    "phone": "",
+    "email": "kerteminde@mhj-lokal.dk",
+    "lat": 55.447485,
+    "lng": 10.652838,
+    "activities": [
+      "Den rullende kagemand",
+      "Babycafé",
+      "Gavekort til nybagte forældre",
+      "Oplevelser og udflugter",
+      "Julehjælp",
+      "Ønsketræet"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Djursland lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/djursland/",
+    "address": "",
+    "city": "Djursland",
+    "phone": "",
+    "email": "djursland@mhj-lokal.dk",
+    "lat": 56.316395,
+    "lng": 10.5338922,
+    "activities": [
+      "Den rullende kagemand",
+      "Babycafé",
+      "Babystartpakker",
+      "Oplevelser og udflugter"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Fredericia lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/fredericia/",
+    "address": "",
+    "city": "Fredericia",
+    "phone": "",
+    "email": "Fredericia@mhj-lokal.dk",
+    "lat": 55.565268,
+    "lng": 9.7562169,
+    "activities": [
+      "Den rullende kagemand",
+      "Babycafé",
+      "Oplevelser og udflugter",
+      "Familieven"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Vesterbro lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/vesterbro/",
+    "address": "Wagnersvej 19, 2450 Kbh SV",
+    "city": "Kbh SV",
+    "phone": "",
+    "email": "Vesterbro@mhj-lokal.dk",
+    "lat": 55.646783,
+    "lng": 12.529608,
+    "activities": [
+      "Den rullende kagemand",
+      "Babycafé",
+      "Oplevelser og udflugter",
+      "Ønsketræet"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Holstebro lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/holstebro/",
+    "address": "Nygade 3, 7500 Holstebro",
+    "city": "Holstebro",
+    "phone": "",
+    "email": "Holstebro@mhj-lokal.dk",
+    "lat": 56.361179,
+    "lng": 8.619344,
+    "activities": [
+      "Den rullende kagemand",
+      "Babycafé",
+      "Babystartpakker",
+      "Oplevelser og udflugter",
+      "Måltidet",
+      "Udstyrpas"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Vordingborg lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/vordingborg/",
+    "address": "Mødrehjælpens butik på Algade 59, 4760 Vordingborg",
+    "city": "Vordingborg",
+    "phone": "",
+    "email": "vordingborg@mhj-lokal.dk",
+    "lat": 55.0102518,
+    "lng": 11.9097478,
+    "activities": [
+      "Den rullende kagemand",
+      "Babycafé",
+      "Babystartpakker",
+      "Oplevelser og udflugter",
+      "Julehjælp"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Aarhus lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/aarhus/",
+    "address": "",
+    "city": "Aarhus",
+    "phone": "",
+    "email": "aarhus@mhj-lokal.dk",
+    "lat": 56.1496278,
+    "lng": 10.2134046,
+    "activities": [
+      "Den rullende kagemand",
+      "Babystartpakker",
+      "Måltidet",
+      "Oplevelser og udflugter",
+      "Sommerlejr",
+      "Julehjælp"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Herning lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/herning/",
+    "address": "",
+    "city": "Herning",
+    "phone": "",
+    "email": "herning@mhj-lokal.dk",
+    "lat": 56.1379757,
+    "lng": 8.9746623,
+    "activities": [
+      "Den rullende kagemand",
+      "Babystartpakker",
+      "Babycafé",
+      "Fædrecafé",
+      "Oplevelser og udflugter"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Næstved lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/naestved/",
+    "address": "Ringstedgade 22, 4700 Næstved",
+    "city": "Næstved",
+    "phone": "40145646",
+    "email": "naestved@mhj-lokal.dk",
+    "lat": 55.233528,
+    "lng": 11.759778,
+    "activities": [
+      "Den rullende kagemand",
+      "Babystartpakker",
+      "Babycafé",
+      "Familiecafé",
+      "Oplevelser og udflugter"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Frederiksberg lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/frederiksberg/",
+    "address": "Rolighedsvej 18, 1958 Frederiksberg C",
+    "city": "Frederiksberg C",
+    "phone": "31202156",
+    "email": "frederiksberg@mhj-lokal.dk",
+    "lat": 55.684278,
+    "lng": 12.54264,
+    "activities": [
+      "Den rullende kagemand",
+      "En Hjælpende Hånd",
+      "Julehjælp",
+      "Tilskud til idræts- eller fritidsaktivitet"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Vejle lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/vejle/",
+    "address": "Foldegade 19, 7100 Vejle",
+    "city": "Vejle",
+    "phone": "20330895",
+    "email": "vejle@mhj-lokal.dk",
+    "lat": 55.706433,
+    "lng": 9.533569,
+    "activities": [
+      "Den rullende kagemand",
+      "Babycafé",
+      "Oplevelser og udflugter",
+      "Babystartpakker",
+      "Gavekort til nybagte mødre"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Thisted lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/thisted/",
+    "address": "",
+    "city": "Thisted",
+    "phone": "",
+    "email": "thisted@mhj-lokal.dk",
+    "lat": 56.9562093,
+    "lng": 8.6848749,
+    "activities": [
+      "Den rullende kagemand",
+      "Oplevelser og udflugter",
+      "Babystartpakker"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Esbjerg lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/esbjerg/",
+    "address": "Danmarksgade 53, 6700 Esbjerg",
+    "city": "Esbjerg",
+    "phone": "",
+    "email": "esbjerg@mhj-lokal.dk",
+    "lat": 55.467937,
+    "lng": 8.450563,
+    "activities": [
+      "Den rullende kagemand",
+      "Oplevelser og udflugter",
+      "Juleaktiviteter",
+      "Måltidet"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Brønderslev lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/broenderslev/",
+    "address": "Bredgade 65, 9700 Brønderslev",
+    "city": "Brønderslev",
+    "phone": "",
+    "email": "bronderslev@mhj-lokal.dk",
+    "lat": 57.269239,
+    "lng": 9.94929,
+    "activities": [
+      "Den rullende kagemand",
+      "Babystartpakker",
+      "Oplevelser og udflugter"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Viborg lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/viborg/",
+    "address": "",
+    "city": "Viborg",
+    "phone": "",
+    "email": "viborg@mhj-lokal.dk",
+    "lat": 56.4469128,
+    "lng": 9.4059354,
+    "activities": [
+      "Den rullende kagemand",
+      "Babystartpakker",
+      "Oplevelser og udflugter",
+      "Julehjælp",
+      "Øvrige aktiviteter"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Kalundborg lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/kalundborg/",
+    "address": "",
+    "city": "Kalundborg",
+    "phone": "40325902",
+    "email": "kalundborg@mhj-lokal.dk",
+    "lat": 55.6833793,
+    "lng": 11.0993619,
+    "activities": [
+      "Den rullende kagemand",
+      "Oplevelser og udflugter",
+      "Gavekort til alle nyfødte i Kalundborg kommune",
+      "Udlejning af dåbskjole"
+    ]
+  },
+  {
+    "name": "Mødrehjælpen Aalborg lokalforening",
+    "url": "https://moedrehjaelpen.dk/lokalforeninger/aalborg/",
+    "address": "Danmarksgade 14, 9000 Aalborg",
+    "city": "Aalborg",
+    "phone": "30748493",
+    "email": "aalborg@mhj-lokal.dk",
+    "lat": 57.045618,
+    "lng": 9.917487,
+    "activities": [
+      "Babycafé",
+      "Babystartpakker",
+      "Den rullende kagemand",
+      "Juleaktiviteter",
+      "Oplevelser og udflugter"
+    ]
+  }
+]
